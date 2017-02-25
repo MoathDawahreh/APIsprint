@@ -1,10 +1,22 @@
 //require express and mongoose here
 //require your middleware and routes here
+var express = require('express');
+var mongoose = require('mongoose')
+// var bodyParser = require('body-parser');
 
+
+var app = express()
+require('./config/routes.js')(app , express);
+require('./config/middleware.js')(app , express);
+
+
+var port = 3000
 
 //=============================================================================
 /*									Database								 */
 //=============================================================================
+
+mongoose.connect('mongodb://localhost/mydb');
 
 
 	//here you will have to connect to your mongo database, 
@@ -18,7 +30,8 @@
 
 //set express to listen to for requests or certain port
 
+app.listen(process.env.PORT || port);
 
 
 
-module.exports= //some thing;
+// module.exports= //some thing;
