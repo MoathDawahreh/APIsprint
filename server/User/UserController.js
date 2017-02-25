@@ -17,11 +17,12 @@ module.exports ={
 		console.log('*****************************Id',ID)
 		User.find({ ID: ID }, function(err, Users) {
 		  if (err) throw err;
-		  res.send(Users)
+		  res.json(Users)
 		});
 	},
 	AddNewUser : function(req,res){
-		console.log(req.body.FirstName)
+		// console.log(req.body)
+		// console.log(req.headers)
 		var User3= new User({
 			FirstName: req.body.FirstName,
 			LastName: req.body.LastName,
@@ -34,8 +35,8 @@ module.exports ={
 
 			}else
 
-		  	// if (err) throw err;
 		  	res.json(data)
+		  	// if (err) throw err;
 		// res.send(data)
 		});
 

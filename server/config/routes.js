@@ -15,7 +15,7 @@ module.exports = function (app, express) {
 /*								User route									 */
 //=============================================================================
 	app.get('/api/User/getAll',UserController.getAllUsers);
-	app.get('/api/User/GetUserByID/:ID',UserController.getAllUsers);
+	app.get('/api/User/GetUserByID/:ID',UserController.GetUserByID);
 	app.post('/api/User/AddNewUser',UserController.AddNewUser);
 
 
