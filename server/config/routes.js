@@ -2,30 +2,32 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var CarController = require('../Car/CarController.js');
-
+var UserController = require('../User/UserController.js');
 
 var app = express()
 
-
 module.exports = function (app, express) {
-
 	app.get('/', function(req, res) {
  	 res.send('helloooo! Its mee');
 	});
 
 //=============================================================================
-/*								movie route									 */
+/*								User route									 */
 //=============================================================================
-	// app.get('/api/movie/getAll', movieController.getAllMovies);
+	app.get('/api/User/getAll',UserController.getAllUsers);
+	app.get('/api/User/GetUserByID/:ID',UserController.getAllUsers);
+	app.post('/api/User/AddNewUser',UserController.AddNewUser);
+
+
 // 	//here you have to add two more routes
 	
 // //=============================================================================
-// /*								book route									 */
+// /*								Car route									 */
 // //=============================================================================
 //post 201
 	app.post('/api/Car/insterCars', CarController.insertCars);
 	app.get('/api/Car/findCar/:ID', CarController.GetCarByID);
-	app.get('/api/Car/all', CarController.GetAllCars);
+	app.get('/api/Car/getAll', CarController.GetAllCars);
 
 	//here you have to add two more routes
 

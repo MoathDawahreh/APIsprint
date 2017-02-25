@@ -5,14 +5,16 @@ var mongoose = require('mongoose');
 
 module.exports ={
 	insertCars : function (req, res) {
+		// var cars = req.body
+		// mongoose.connection.collection('Car').insert(car);
+		// for (var i = 0; i < Things.length; i++) {
+		// 	Things[i]
+		// }
 				
 	},
 	GetCarByID : function(req,res){
 		var ID = req.params.ID;
 		console.log('-=-=-=-=-=-=Id',ID)
-		// mongoose.model('Car').find({ Car : ID },function(){
-
-		// })
 		Car.find({ ID: ID }, function(err, cars) {
 		  if (err) throw err;
 		  // console.log(cars);
