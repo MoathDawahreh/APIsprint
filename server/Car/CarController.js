@@ -11,6 +11,10 @@ module.exports ={
 			if (error) throw error;
 			res.send(docs)
 		});
+
+		// for (var i = 0; i < req.body.length; i++) {
+			
+		// }
 				
 	},
 	GetCarByID : function(req,res){
@@ -30,9 +34,5 @@ module.exports ={
     		res.json(cars); 
 		});
 	}
-
-	//you have to use the books model to make a new database entry 
-	
-	//you need to use params.id to find a books from your database
 	
 }

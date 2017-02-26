@@ -31,12 +31,8 @@ module.exports ={
 		});
 		User3.save(function(err,data) {
 			console.log(data)
-			if (err) {
-
-			}else
-
+		  	if (err) throw err;
 		  	res.json(data)
-		  	// if (err) throw err;
 		// res.send(data)
 		});
 

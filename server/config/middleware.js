@@ -6,7 +6,6 @@ var morgan = require('morgan');
 var app = express()
 
 
-
 module.exports = function (app, express) {
   //use middleware to provide concise output colored by response status for development use
    app.use(morgan('dev'));
